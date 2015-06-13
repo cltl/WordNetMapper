@@ -14,11 +14,10 @@ Here are some examples on how to use it:
 python
 >>> from WordNetMapper import WordNetMapper
 >>> my_mapper = WordNetMapper()
->>> my_parser.offset_to_offset("00020846", "21", "30")
+>>> my_mapper.offset_to_offset("00020846", "21", "30")
 ('00021939', 'n')
 >>>
->>> my_parser = WordNetMapper()
->>> succes_rate,missed_mappings = my_parser.overlap("30","171")
+>>> succes_rate,missed_mappings = my_mapper.overlap("30","171")
 >>> succes_rate
 0.9489831562625135
 ```
@@ -35,7 +34,7 @@ python
 * offset_to_offset
 * overlap
 
-##Installation (is not not needed to use it, only included for replicability)
+##Installation (is not needed to use it, only included for replicability)
 * Clone this repository:
     * cd repository_folder
     * sudo bash install.sh
