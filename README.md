@@ -10,20 +10,20 @@ This library is a python module (should work with both version 2.7 and 3+).
 For python 2.7, the cPickle module has to be installed.
 Here are some examples on how to use it:
 
-shell
+```shell
 python
 >>> from WordNetMapper import WordNetMapper
 >>> my_mapper = WordNetMapper()
 >>> my_parser.offset_to_offset("00020846", "21", "30")
 ('00021939', 'n')
-
-#example to show overlap/new senses
+>>>
 >>> my_parser = WordNetMapper()
 >>> succes_rate,missed_mappings = my_parser.overlap("30","171")
 >>> succes_rate
 0.9489831562625135
+```
 
-#list of useful methods (do help(WordNetMapper.method) for info on how to use it)
+##list of useful methods (do help(WordNetMapper.method) for info on how to use it)
 * ilidef_to_ilidef
 * ilidef_to_lexkey
 * ilidef_to_offset
