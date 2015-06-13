@@ -28,3 +28,6 @@ class Lexkey2OffsetException(Exception):
 
 class IliException(Exception):
     pass
+
+class Offset2Lexkey(Exception):
+    pass

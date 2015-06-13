@@ -10,7 +10,7 @@ else:
     
 #import installed or created modules
 from config import paths
-from config import Offset2OffsetException,BinException,Offset2OffsetException,Lexkey2OffsetException,IliException
+from config import Offset2OffsetException,BinException,Offset2OffsetException,Lexkey2OffsetException,IliException,Offset2Lexkey
 
 import wn_mapper_utils as utils 
 
@@ -76,7 +76,12 @@ class WordNetMapper():
         (1) map offset to possible sensekeys
         (2) check for direct lemma match in possible sensekeys
         (3) check if only one sensekey
-        (4) try something Levenshtein like to find possible sensekey
+        (4) [TODO]: try something Levenshtein like to find possible sensekey
+        Offset2Lexkey is raised if no lexkey is found.
+        
+        >>> my_mapper = WordNetMapper()
+        >>> my_mapper.offset_to_lexkey("05262185","moustache","30")
+        'moustache%1:08:00::'
         
         @type  offset: str
         @param offset: 8 character offset with trailing zeros (for example
@@ -86,7 +91,7 @@ class WordNetMapper():
         @param lemma: the lemma corresponding to the offset (for example '1000')
         
         @type  source_wn_version: str
-        @param source_wn_version: source wn_version (for example '2.1')
+        @param source_wn_version: source wn_version (for example '21')
         
         @rtype: str
         @return: lexkey if found, else error is raised.
@@ -112,6 +117,7 @@ class WordNetMapper():
         if len(list_lexkeys) == 1:
             return list_lexkeys[0]
         
+        raise Offset2Lexkey("no lexkey found for %s %s" % (offset,lemma))
                         
     def offset_to_offset(self, 
                          offset, 
@@ -174,15 +180,19 @@ class WordNetMapper():
         method tries to map offset to ildef across versions of wordnet
         error is raised if no mapping available.
         
+        >>> my_parser = WordNetMapper()
+        >>> my_parser.offset_to_ilidef("00020846", "21", "30")
+        'ili-30-00021939-n'
+
         @type  offset: str
         @param offset: 8 character offset with trailing zeros (for example
         00003469)
         
         @type  source_wn_version: str
-        @param source_wn_version: source wn_version (for example '2.1')
+        @param source_wn_version: source wn_version (for example '21')
     
         @type  target_wn_version: str
-        @param target_wn_version: source wn_version (for example '3.0')
+        @param target_wn_version: source wn_version (for example '30')
 
         @type  output_format: str | dict
         @param output_format: if 'highest': str is returned of ilidef
@@ -213,14 +223,18 @@ class WordNetMapper():
         '''
         lexkey is mapped to lexkey 
         
+        >>> my_mapper = WordNetMapper()
+        >>> my_mapper.lexkey_to_lexkey('rock_hopper%1:05:00::','21','30')
+        'rock_hopper%1:05:00::'
+        
         @type  lexkey: str
         @param lexkey: wordnet sensekey (for example 'rock_hopper%1:05:00::')
 
         @type  source_wn_version: str
-        @param source_wn_version: source wn_version (for example '2.1')
+        @param source_wn_version: source wn_version (for example '21')
     
         @type  target_wn_version: str
-        @param target_wn_version: source wn_version (for example '3.0')
+        @param target_wn_version: source wn_version (for example '30')
         
         @rtype: str
         @return: lexkey
@@ -249,11 +263,15 @@ class WordNetMapper():
         method tries to return the offset of a lexkey from a particular wordnet
         version. Lexkey2OffsetException is raised if no mapping is found.
         
+        >>> my_mapper = WordNetMapper()
+        >>> my_mapper.lexkey_to_offset('rock_hopper%1:05:00::','21')
+        '02037384'
+        
         @type  lexkey: str
         @param lexkey: wordnet sensekey (for example 'rock_hopper%1:05:00::')
         
         @type  source_wn_version: str
-        @param source_wn_version: source wn_version (for example '2.1')
+        @param source_wn_version: source wn_version (for example '21')
         
         @rtype: str
         @return: offset of lexkey, error is raised if not found
@@ -278,7 +296,12 @@ class WordNetMapper():
                          source_wn_version,
                          target_wn_version):
         '''
-        lexkey is mapped to ilidef 
+        lexkey is mapped to ilidef
+        
+        
+        >>> my_mapper = WordNetMapper()
+        >>> my_mapper.lexkey_to_ilidef('rock_hopper%1:05:00::','20','30')
+        'ili-30-02057330-n'
         
         @type  lexkey: str
         @param lexkey: wordnet sensekey (for example 'rock_hopper%1:05:00::')
@@ -306,6 +329,10 @@ class WordNetMapper():
         '''
         method tries to map ilidef to lexkey, error is no mapping available
         
+        >>> my_mapper = WordNetMapper()
+        >>> my_mapper.ilidef_to_lexkey('ili-30-02069355-a','other')
+        'other%3:00:00::'
+        
         @type  ili: str
         @param ili: ili defintion of wordnet synset (for example ili-30-02069355-a)
         
@@ -332,11 +359,15 @@ class WordNetMapper():
         the ilidef is mapped to an offset between wordnet versions.
         IliException is raised if the input format of the ili is not correct
         
+        >>> my_mapper = WordNetMapper()
+        >>> my_mapper.ilidef_to_offset('ili-30-02069355-a','20')
+        ('01999889', 'a')
+        
         @type  ili: str
         @param ili: ili defintion of wordnet synset (for example ili-30-02069355-a)
         
         @type  target_wn_version: str
-        @param target_wn_version: source wn_version (for example '3.0')
+        @param target_wn_version: source wn_version (for example '30')
         
         @type  output_format: tuple | dict
         @param output_format: if 'highest': str is returned of (offset,pos)
@@ -368,6 +399,10 @@ class WordNetMapper():
         '''
         given a certain ili def, this method tries to map it to ilidef
         of another wordnet version
+        
+        >>> my_mapper = WordNetMapper()
+        >>> my_mapper.ilidef_to_ilidef('ili-30-02069355-a','30','16')
+        'ili-16-01991315-a'
         
         @type  ili: str
         @param ili: ili defintion of wordnet synset (for example ili-30-02069355-a)
