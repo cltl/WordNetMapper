@@ -77,7 +77,7 @@ class WordNetMapper():
         (2) check for direct lemma match in possible sensekeys
         (3) check if only one sensekey
         (4) [TODO]: try something Levenshtein like to find possible sensekey
-        Offset2Lexkey is raised if no lexkey is found.
+        Exception Offset2Lexkey is raised if no lexkey is found.
         
         >>> my_mapper = WordNetMapper()
         >>> my_mapper.offset_to_lexkey("05262185","moustache","30")
@@ -94,7 +94,7 @@ class WordNetMapper():
         @param source_wn_version: source wn_version (for example '21')
         
         @rtype: str
-        @return: lexkey if found, else error is raised.
+        @return: lexkey if found, else Exception Offset2Lexkey is raised.
         '''
         #load_bin_if_needed
         path_bin = os.path.join(paths['dir_offset2lexkey_bins'],
@@ -117,7 +117,7 @@ class WordNetMapper():
         if len(list_lexkeys) == 1:
             return list_lexkeys[0]
         
-        raise Offset2Lexkey("no lexkey found for %s %s" % (offset,lemma))
+        raise Offset2Lexkey('''no lexkey found for combination of %s %s in wordnet version %s''' % (offset,lemma,source_wn_version))
                         
     def offset_to_offset(self, 
                          offset, 
@@ -143,10 +143,15 @@ class WordNetMapper():
         @type  target_wn_version: str
         @param target_wn_version: source wn_version (for example '3.0')
 
-        @type  output_format: tuple | dict
+        @type  output_format: str
         @param output_format: if 'highest': str is returned of (offset,pos)
         with highest confidence. if 'all', a dict is returned mapping the 
         (offset,pos) -> confidence (float)
+        
+        @rtype: tuple | dict
+        @return: if param output_format == 'highest': str is returned of (offset,pos)
+        with highest confidence. if param output_format == 'all', a dict is returned mapping the 
+        (offset,pos) -> confidence (float). Offset2OffsetException is raised if no mapping available.
         '''
         #load_bin_if_needed
         path_bin = os.path.join(paths['dir_offset2offset_bins'],
@@ -163,7 +168,10 @@ class WordNetMapper():
         
         #check if mapping output is not empty, else raise error
         if not target_offsets:
-            raise Offset2OffsetException("no mapping available for offset %s" % offset) 
+            raise Offset2OffsetException('''no mapping available for offset %s
+                                            between wordnet version %s and %s''' % (offset,
+                                                                                    source_wn_version,
+                                                                                    target_wn_version)) 
         
         elif output_format == "all":
             return target_offsets
@@ -178,7 +186,6 @@ class WordNetMapper():
                          output_format='highest'):
         '''
         method tries to map offset to ildef across versions of wordnet
-        error is raised if no mapping available.
         
         >>> my_parser = WordNetMapper()
         >>> my_parser.offset_to_ilidef("00020846", "21", "30")
@@ -194,10 +201,16 @@ class WordNetMapper():
         @type  target_wn_version: str
         @param target_wn_version: source wn_version (for example '30')
 
-        @type  output_format: str | dict
+        @type  output_format: str
         @param output_format: if 'highest': str is returned of ilidef
         with highest confidence. if 'all', a dict is returned mapping the 
         (ilidef,pos) -> confidence (float)
+        
+        @rtype: str | dict
+        @return: if param output_format == 'highest': str is returned of ilidef
+        with highest confidence. if param output_format == 'all', a dict is returned mapping the 
+        (ildef,pos) -> confidence (float)
+
         '''
         output = self.offset_to_offset(offset, 
                                        source_wn_version, 
@@ -221,7 +234,8 @@ class WordNetMapper():
                          source_wn_version,
                          target_wn_version):
         '''
-        lexkey is mapped to lexkey 
+        lexkey is mapped to lexkey. Exception Offset2Lexkey is raised 
+        if not found
         
         >>> my_mapper = WordNetMapper()
         >>> my_mapper.lexkey_to_lexkey('rock_hopper%1:05:00::','21','30')
@@ -237,7 +251,7 @@ class WordNetMapper():
         @param target_wn_version: source wn_version (for example '30')
         
         @rtype: str
-        @return: lexkey
+        @return: lexkey, Exception Offset2Lexkey is raised if not found
         '''
         #obtain lemma
         lemma = lexkey.split("%")[0]
@@ -274,7 +288,7 @@ class WordNetMapper():
         @param source_wn_version: source wn_version (for example '21')
         
         @rtype: str
-        @return: offset of lexkey, error is raised if not found
+        @return: offset of lexkey, Lexkey2OffsetException is raised if not found
         '''
         #load_bin_if_needed
         path_bin = os.path.join(paths['dir_lexkey2offset_bins'],
@@ -287,14 +301,16 @@ class WordNetMapper():
         offset = self.map_lexkey_to_offset[(lexkey,source_wn_version)]
         
         if not offset:
-            raise Lexkey2OffsetException("no offset found for %s" % lexkey)
+            raise Lexkey2OffsetException("no offset found for %s in wordnet version %s" % (lexkey,
+                                                                                           source_wn_version))
         else:
             return offset
     
     def lexkey_to_ilidef(self,
                          lexkey,
                          source_wn_version,
-                         target_wn_version):
+                         target_wn_version,
+                         output_format="highest"):
         '''
         lexkey is mapped to ilidef
         
@@ -312,8 +328,15 @@ class WordNetMapper():
         @type  target_wn_version: str
         @param target_wn_version: source wn_version (for example '30')
         
-        @rtype: str
-        @return: ilidef
+        @type  output_format: str
+        @param output_format: if 'highest': str is returned of ilidef
+        with highest confidence. if 'all', a dict is returned mapping the 
+        (ilidef,pos) -> confidence (float)
+
+        @rtype: str | dict
+        @return: if param output_format == 'highest': str is returned of ilidef
+        with highest confidence. if param output_format == 'all', a dict is returned mapping the 
+        (ildef,pos) -> confidence (float)
         '''
         #map lexkey to offset
         source_offset = self.lexkey_to_offset(lexkey, source_wn_version)
@@ -321,13 +344,15 @@ class WordNetMapper():
         #map offset to ilidef
         ilidef = self.offset_to_ilidef(source_offset, 
                                        source_wn_version, 
-                                       target_wn_version)
+                                       target_wn_version,
+                                       output_format=output_format)
         
         return ilidef 
     
     def ilidef_to_lexkey(self, ilidef, lemma):
         '''
-        method tries to map ilidef to lexkey, error is no mapping available
+        method tries to map ilidef to lexkey. Exception Offset2Lexkey is 
+        raised if not found.
         
         >>> my_mapper = WordNetMapper()
         >>> my_mapper.ilidef_to_lexkey('ili-30-02069355-a','other')
@@ -340,8 +365,7 @@ class WordNetMapper():
         @param lemma: a lemma, for example 'other'
         
         @rtype: str
-        @return: lexkey of combination of ilidef and lemma. error if no
-        lexkey was found
+        @return: lexkey of combination of ilidef and lemma. Exception Offset2Lexkey
         ''' 
         ili,source_wn_version,offset,pos = ilidef.split('-')
         
@@ -374,8 +398,11 @@ class WordNetMapper():
         with highest confidence. if 'all', a dict is returned mapping the 
         (offset,pos) -> confidence (float)
 
-        @rtype: str
-        @return: 8 character wordnet offset
+        @rtype: tuple | dict
+        @return: if param output_format == 'highest': str is returned of (offset,pos)
+        with highest confidence. if param output_format == 'all', a dict is returned mapping the 
+        (offset,pos) -> confidence (float)
+        
         '''
         #split ili
         try:
@@ -418,8 +445,10 @@ class WordNetMapper():
         with highest confidence. if 'all', a dict is returned mapping the 
         (ili,pos) -> confidence (float)
 
-        @rtype: str
-        @return: 8 character wordnet offset
+        @rtype: str | dict
+        @return: if param output_format == 'highest': str is returned of ilidef
+        with highest confidence. if param output_format == 'all', a dict is returned mapping the 
+        (ildef,pos) -> confidence (float)
         '''
         
         #map ilidef2offset

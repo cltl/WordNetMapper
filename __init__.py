@@ -9,7 +9,7 @@ from wordnet_mapper import WordNetMapper
 #documentation attributes
 WordNetMapper.README         = open(os.path.join(cwd,"README.md")).read()
 WordNetMapper.LICENSE        = open(os.path.join(cwd,"LICENSE.md")).read()
-WordNetMapper.__author__     = ["Marten Postma","Ruben Izuierdo"]
+WordNetMapper.__author__     = ["Marten Postma","Ruben Izquierdo"]
 WordNetMapper.__license__    = "Apache"
 WordNetMapper.__version__    = "1.0"
 WordNetMapper.__maintainer__ = "Marten Postma"

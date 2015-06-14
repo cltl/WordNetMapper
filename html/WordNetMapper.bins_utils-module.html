@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>WordNetMapper.bins_utils</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="WordNetMapper-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="WordNetMapper-module.html">Package&nbsp;WordNetMapper</a> ::
+        Module&nbsp;bins_utils
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="WordNetMapper.bins_utils-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module bins_utils</h1><p class="nomargin-top"><span class="codelink"><a href="WordNetMapper.bins_utils-pysrc.html">source&nbsp;code</a></span></p>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="WordNetMapper.bins_utils-module.html#mapping_offset2offset" class="summary-sig-name">mapping_offset2offset</a>(<span class="summary-sig-arg">map_file</span>,
+        <span class="summary-sig-arg">source_wn_version</span>,
+        <span class="summary-sig-arg">target_wn_version</span>,
+        <span class="summary-sig-arg">pos</span>)</span><br />
+      this method create a defaultdict mappping 
+(source_offset,source_wn_version,target_wn_version)    -&gt;
+    'confidence' -&gt;    (target_offset,pos)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="WordNetMapper.bins_utils-pysrc.html#mapping_offset2offset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">collections.defaultdict</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="WordNetMapper.bins_utils-module.html#mapping_offset2lexkey" class="summary-sig-name">mapping_offset2lexkey</a>(<span class="summary-sig-arg">index_sense_file</span>,
+        <span class="summary-sig-arg">source_wn_version</span>)</span><br />
+      method create a dict mapping: (offset,source_wn_version) -&gt; list 
+      of possible sensekeys</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="WordNetMapper.bins_utils-pysrc.html#mapping_offset2lexkey">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">collections.defaultdict</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="WordNetMapper.bins_utils-module.html#mapping_lexkey2offset" class="summary-sig-name">mapping_lexkey2offset</a>(<span class="summary-sig-arg">index_sense_file</span>,
+        <span class="summary-sig-arg">source_wn_version</span>)</span><br />
+      method create a dict mapping: (lexkey,source_wn_version) -&gt;    
+      offset</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="WordNetMapper.bins_utils-pysrc.html#mapping_lexkey2offset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">str</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="WordNetMapper.bins_utils-module.html#get_pos" class="summary-sig-name">get_pos</a>(<span class="summary-sig-arg">full_path</span>)</span><br />
+      given a full path that ends with         adj | adv | noun | verb the 
+      pos is returned following the tagset a   , r,    n ,    v</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="WordNetMapper.bins_utils-pysrc.html#get_pos">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'WordNetMapper'"><code class="variable-quote">'</code><code class="variable-string">WordNetMapper</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="mapping_offset2offset"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">mapping_offset2offset</span>(<span class="sig-arg">map_file</span>,
+        <span class="sig-arg">source_wn_version</span>,
+        <span class="sig-arg">target_wn_version</span>,
+        <span class="sig-arg">pos</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="WordNetMapper.bins_utils-pysrc.html#mapping_offset2offset">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+this method create a defaultdict mappping 
+(source_offset,source_wn_version,target_wn_version)    -&gt;
+    'confidence' -&gt;    (target_offset,pos)
+
+@type  map_file: str
+@param map_file: full path to file mapping offsets of one wn version to
+another. example of lines in file:
+00035448 00042340 1 
+00035605 00044164 0.333 01849351 0.333 01854163 0.333 
+
+@type  source_wn_version: str
+@param source_wn_version: source wn_version (for example '2.1')
+
+@type  target_wn_version: str
+@param target_wn_version: source wn_version (for example '3.0')
+
+@type  pos: str
+@param pos: part of speech (n,v,a,r)
+
+@rtype:  collections.defaultdict
+@return: (source_offset,source_wn_verison,target_wn_version)    -&gt;
+    (target_offset,pos) -&gt; confidence (float)
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="mapping_offset2lexkey"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">mapping_offset2lexkey</span>(<span class="sig-arg">index_sense_file</span>,
+        <span class="sig-arg">source_wn_version</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="WordNetMapper.bins_utils-pysrc.html#mapping_offset2lexkey">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>method create a dict mapping: (offset,source_wn_version) -&gt; list of
+  possible sensekeys</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>index_sense_file</code></strong> (str) - full path to wordnet index.sense file</li>
+        <li><strong class="pname"><code>source_wn_version</code></strong> (str) - source wn_version (for example '2.1')</li>
+    </ul></dd>
+    <dt>Returns: collections.defaultdict</dt>
+        <dd>mapping (offset,source_wn_version) -&gt; list of possible 
+          sensekeyss</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="mapping_lexkey2offset"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">mapping_lexkey2offset</span>(<span class="sig-arg">index_sense_file</span>,
+        <span class="sig-arg">source_wn_version</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="WordNetMapper.bins_utils-pysrc.html#mapping_lexkey2offset">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>method create a dict mapping: (lexkey,source_wn_version) -&gt;    
+  offset</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>index_sense_file</code></strong> (str) - full path to wordnet index.sense file</li>
+        <li><strong class="pname"><code>source_wn_version</code></strong> (str) - source wn_version (for example '2.1')</li>
+    </ul></dd>
+    <dt>Returns: collections.defaultdict</dt>
+        <dd>(lexkey,source_wn_version) -&gt; offset</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_pos"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_pos</span>(<span class="sig-arg">full_path</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="WordNetMapper.bins_utils-pysrc.html#get_pos">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>given a full path that ends with         adj | adv | noun | verb the 
+  pos is returned following the tagset a   , r,    n ,    v</p>
+  <dl class="fields">
+    <dt>Returns: str</dt>
+        <dd>n | v | r | a</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="WordNetMapper-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Jun 14 14:14:01 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

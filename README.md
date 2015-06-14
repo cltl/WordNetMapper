@@ -8,6 +8,8 @@ and the automatically generated mappings between WordNet offsets (http://nlp.lsi
 ##USAGE
 This library is a python module (should work with both version 2.7 and 3+). 
 For python 2.7, the cPickle module has to be installed.
+Epydoc was used to document the code (http://epydoc.sourceforge.net/).
+After cloning this repo, open html/WordNetMapper.wordnet_mapper.WordNetMapper-class.html to inspect.
 Here are some examples on how to use it:
 
 ```shell
@@ -20,6 +22,8 @@ python
 >>> succes_rate,missed_mappings = my_mapper.overlap("30","171")
 >>> succes_rate
 0.9489831562625135
+>>> WordNetMapper.__license__
+'Apache'
 ```
 
 ##list of useful methods (do help(WordNetMapper.method) for info on how to use it)
@@ -40,6 +44,7 @@ python
     * sudo bash install.sh
 
 ##Contact
+For bugs and other things related to this repo, please contact:
 * Marten Postma
 * m.c.postma@vu.nl
 * http://martenpostma.com/
@@ -54,4 +59,4 @@ python
 
 ##TODO:
 * Levenshtein for offset to lexkey
-* extend unit testing
+* extend unit testing with output_format == "all" examples + catching errors
