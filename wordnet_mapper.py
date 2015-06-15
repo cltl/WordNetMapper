@@ -36,6 +36,8 @@ class WordNetMapper():
         self.cur_offset_to_lexkey  = ""
         self.map_lexkey_to_offset   = {}
         
+        print self.offset_to_lexkey("03413428","gambling hell","30")
+        
     def load_bin_if_needed(self,
                            current_path_bin,
                            new_path_bin,
@@ -76,12 +78,15 @@ class WordNetMapper():
         (1) map offset to possible sensekeys
         (2) check for direct lemma match in possible sensekeys
         (3) check if only one sensekey
-        (4) [TODO]: try something Levenshtein like to find possible sensekey
+        (4) pick lexkey with lowest Levenshtein distance to lemma
         Exception Offset2Lexkey is raised if no lexkey is found.
         
         >>> my_mapper = WordNetMapper()
         >>> my_mapper.offset_to_lexkey("05262185","moustache","30")
         'moustache%1:08:00::'
+        
+        >>> my_mapper.offset_to_lexkey("03413428","gambling hell","30")
+        'gambling_hell%1:06:00::'
         
         @type  offset: str
         @param offset: 8 character offset with trailing zeros (for example
@@ -112,10 +117,21 @@ class WordNetMapper():
                 return lexkey 
             
         #check if only one lexkeys
-        #TODO: implement Levenshtein to find lexkey and add as option
-
         if len(list_lexkeys) == 1:
             return list_lexkeys[0]
+        
+        #Levenshtein
+        else:
+            candidates = [(lexkey.split("%")[0],lexkey) for lexkey in list_lexkeys]
+            min_levenshtein = 1000
+            best_lexkey     = ""
+            for candidate_lemma,lexkey in candidates:
+                levenshtein = utils.levenshtein(candidate_lemma,lemma)
+                if levenshtein < min_levenshtein:
+                    min_levenshtein = levenshtein
+                    best_lexkey     = lexkey
+                
+            return best_lexkey
         
         raise Offset2Lexkey('''no lexkey found for combination of %s %s in wordnet version %s''' % (offset,lemma,source_wn_version))
                         
@@ -520,4 +536,4 @@ class WordNetMapper():
         
         return succes_rate,missed_mappings
         
-
+WordNetMapper()

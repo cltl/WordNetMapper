@@ -58,5 +58,4 @@ For bugs and other things related to this repo, please contact:
 * Free University of Amsterdam
 
 ##TODO:
-* Levenshtein for offset to lexkey
 * extend unit testing with output_format == "all" examples + catching errors
