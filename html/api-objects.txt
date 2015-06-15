@@ -23,6 +23,7 @@ WordNetMapper.create_bins.wn_versions	WordNetMapper.create_bins-module.html#wn_v
 WordNetMapper.create_bins.index_senses_dir	WordNetMapper.create_bins-module.html#index_senses_dir
 WordNetMapper.create_bins.cwd	WordNetMapper.create_bins-module.html#cwd
 WordNetMapper.wn_mapper_utils	WordNetMapper.wn_mapper_utils-module.html
+WordNetMapper.wn_mapper_utils.levenshtein	WordNetMapper.wn_mapper_utils-module.html#levenshtein
 WordNetMapper.wn_mapper_utils.format_output	WordNetMapper.wn_mapper_utils-module.html#format_output
 WordNetMapper.wn_mapper_utils.__package__	WordNetMapper.wn_mapper_utils-module.html#__package__
 WordNetMapper.wordnet_mapper	WordNetMapper.wordnet_mapper-module.html

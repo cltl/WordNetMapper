@@ -36,8 +36,6 @@ class WordNetMapper():
         self.cur_offset_to_lexkey  = ""
         self.map_lexkey_to_offset   = {}
         
-        print self.offset_to_lexkey("03413428","gambling hell","30")
-        
     def load_bin_if_needed(self,
                            current_path_bin,
                            new_path_bin,
@@ -536,4 +534,3 @@ class WordNetMapper():
         
         return succes_rate,missed_mappings
         
-WordNetMapper()
