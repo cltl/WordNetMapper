@@ -1,7 +1,9 @@
 #import built-in modules
 import os 
+import sys
 from collections import defaultdict
 from glob import glob 
+import subprocess
 
 #import pickle (use cPickle for python2)
 import sys
@@ -25,6 +27,24 @@ dir_offset2lexkey_bins = paths['dir_offset2lexkey_bins']
 mappings_upc_2007      = paths['mappings_upc_2007']
 index_senses_dir       = paths['index_senses_dir']
 
+def save_pickle(mapping,output_path_mapping):
+    '''
+    the mapping is saved, then gzipped
+    
+    @type  mapping: collections.defaultdict
+    @param mapping: a mapping
+    
+    @type output_path_mapping: str
+    @param output_path_mapping: output path where mapping should be stored
+    '''
+    #dump defaultdict
+    pickle.dump(mapping,open(output_path_mapping,'wb'))
+    
+    #gzip it
+    command = "gzip {output_path_mapping}".format(**locals())
+    subprocess.call(command,shell=True)
+    
+    
 def create_offset2offset():
     '''
     '''
@@ -67,7 +87,7 @@ def create_offset2offset():
                 offset2offset.update(mapping)
             
             #dump defaultdict
-            pickle.dump(offset2offset,open(bin_path,'wb'))
+            save_pickle(offset2offset, bin_path)
 
 def create_lexkey2offset():
     '''
@@ -81,7 +101,7 @@ def create_lexkey2offset():
                                                             source_wn_version)
         
         #dump mapping 
-        pickle.dump(mapping,open(bin_path,'wb'))
+        save_pickle(mapping,bin_path)
     
 def create_offset2lexkey():
     '''
@@ -95,14 +115,14 @@ def create_offset2lexkey():
                                                             source_wn_version)
         
         #dump mapping 
-        pickle.dump(mapping,open(bin_path,'wb'))
-    
-        
-#create offset2offset
-create_offset2offset()                   
-                    
-#create lexkey2offset bins
-create_lexkey2offset()
+        save_pickle(mapping,bin_path)    
 
-#create offset2lexkey bins
-create_offset2lexkey()
+if len(sys.argv) == 2:    
+    #create offset2offset
+    create_offset2offset()                   
+                    
+    #create lexkey2offset bins
+    create_lexkey2offset()
+
+    #create offset2lexkey bins
+    create_offset2lexkey()

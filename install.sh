@@ -59,4 +59,8 @@ obtain_index_sense "http://wordnetcode.princeton.edu/2.1/WordNet-2.1.tar.gz" 21
 obtain_index_sense "http://wordnetcode.princeton.edu/3.0/WordNet-3.0.tar.gz" 30
 
 #create bins
-python create_bins.py
+python2 create_bins.py run
+
+#rm mappings and index file
+rm -rf resources/wn_index_senses
+rm -rf resources/mappings-upc-2007

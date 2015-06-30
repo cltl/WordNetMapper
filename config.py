@@ -5,6 +5,7 @@ cwd = os.path.dirname(os.path.realpath(__file__))
 
 #set general paths                
 paths = {'cwd'                    : cwd,
+         'resources'              : os.sep.join([cwd,'resources']),
          'wn_versions'            : ['16','17','171','20','21','30'],
          'dir_offset2offset_bins' : os.path.join(cwd,'resources','bins','offset2offset'),
          'dir_lexkey2offset_bins' : os.path.join(cwd,'resources','bins','lexkey2offset'),
@@ -13,21 +14,3 @@ paths = {'cwd'                    : cwd,
          'index_senses_dir'       : os.path.join(cwd,'resources','wn_index_senses')
          }
 
-
-class Offset2OffsetException(Exception):
-    pass
-
-class BinException(Exception):
-    pass
-
-class Offset2OffsetException(Exception):
-    pass
-
-class Lexkey2OffsetException(Exception):
-    pass
-
-class IliException(Exception):
-    pass
-
-class Offset2Lexkey(Exception):
-    pass

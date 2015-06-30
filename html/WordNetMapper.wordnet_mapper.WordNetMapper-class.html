@@ -68,7 +68,7 @@
 
 <hr />
 <div class="fields">      <p><strong>Version:</strong>
-        1.0
+        1.0.2
       </p>
       <dl><dt>Authors:</dt>
         <dd>
@@ -139,13 +139,13 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#offset_to_lexkey" class="summary-sig-name">offset_to_lexkey</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#map_offset_to_lexkey" class="summary-sig-name">map_offset_to_lexkey</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">offset</span>,
         <span class="summary-sig-arg">lemma</span>,
         <span class="summary-sig-arg">source_wn_version</span>)</span><br />
       method tries to return the lexkey of an offset.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.offset_to_lexkey">source&nbsp;code</a></span>
+            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_offset_to_lexkey">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -159,15 +159,15 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#offset_to_offset" class="summary-sig-name">offset_to_offset</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#map_offset_to_offset" class="summary-sig-name">map_offset_to_offset</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">offset</span>,
         <span class="summary-sig-arg">source_wn_version</span>,
         <span class="summary-sig-arg">target_wn_version</span>,
         <span class="summary-sig-arg">output_format</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">highest</code><code class="variable-quote">'</code></span>)</span><br />
       method tries to map offset to offset across versions of wordnet 
-      Offset2OffsetException is raised if no mapping available.</td>
+      ValueError is raised if no mapping available.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.offset_to_offset">source&nbsp;code</a></span>
+            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_offset_to_offset">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -181,14 +181,14 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#offset_to_ilidef" class="summary-sig-name">offset_to_ilidef</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#map_offset_to_ilidef" class="summary-sig-name">map_offset_to_ilidef</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">offset</span>,
         <span class="summary-sig-arg">source_wn_version</span>,
         <span class="summary-sig-arg">target_wn_version</span>,
         <span class="summary-sig-arg">output_format</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">highest</code><code class="variable-quote">'</code></span>)</span><br />
       method tries to map offset to ildef across versions of wordnet</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.offset_to_ilidef">source&nbsp;code</a></span>
+            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_offset_to_ilidef">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -202,13 +202,13 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#lexkey_to_lexkey" class="summary-sig-name">lexkey_to_lexkey</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#map_lexkey_to_lexkey" class="summary-sig-name">map_lexkey_to_lexkey</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">lexkey</span>,
         <span class="summary-sig-arg">source_wn_version</span>,
         <span class="summary-sig-arg">target_wn_version</span>)</span><br />
       lexkey is mapped to lexkey.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.lexkey_to_lexkey">source&nbsp;code</a></span>
+            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_lexkey_to_lexkey">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -222,13 +222,13 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#lexkey_to_offset" class="summary-sig-name">lexkey_to_offset</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#map_lexkey_to_offset" class="summary-sig-name">map_lexkey_to_offset</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">lexkey</span>,
         <span class="summary-sig-arg">source_wn_version</span>)</span><br />
       method tries to return the offset of a lexkey from a particular 
       wordnet version.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.lexkey_to_offset">source&nbsp;code</a></span>
+            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_lexkey_to_offset">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -242,14 +242,14 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#lexkey_to_ilidef" class="summary-sig-name">lexkey_to_ilidef</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#map_lexkey_to_ilidef" class="summary-sig-name">map_lexkey_to_ilidef</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">lexkey</span>,
         <span class="summary-sig-arg">source_wn_version</span>,
         <span class="summary-sig-arg">target_wn_version</span>,
         <span class="summary-sig-arg">output_format</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">highest</code><code class="variable-quote">'</code></span>)</span><br />
       lexkey is mapped to ilidef</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.lexkey_to_ilidef">source&nbsp;code</a></span>
+            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_lexkey_to_ilidef">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -263,12 +263,12 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#ilidef_to_lexkey" class="summary-sig-name">ilidef_to_lexkey</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#map_ilidef_to_lexkey" class="summary-sig-name">map_ilidef_to_lexkey</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">ilidef</span>,
         <span class="summary-sig-arg">lemma</span>)</span><br />
       method tries to map ilidef to lexkey.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.ilidef_to_lexkey">source&nbsp;code</a></span>
+            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_ilidef_to_lexkey">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -282,14 +282,14 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#ilidef_to_offset" class="summary-sig-name">ilidef_to_offset</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#map_ilidef_to_offset" class="summary-sig-name">map_ilidef_to_offset</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">ili</span>,
         <span class="summary-sig-arg">target_wn_version</span>,
         <span class="summary-sig-arg">output_format</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">highest</code><code class="variable-quote">'</code></span>)</span><br />
       given a certain ili definition (for example ili-30-02069355-a) the 
       ilidef is mapped to an offset between wordnet versions.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.ilidef_to_offset">source&nbsp;code</a></span>
+            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_ilidef_to_offset">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -303,7 +303,7 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#ilidef_to_ilidef" class="summary-sig-name">ilidef_to_ilidef</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="WordNetMapper.wordnet_mapper.WordNetMapper-class.html#map_ilidef_to_ilidef" class="summary-sig-name">map_ilidef_to_ilidef</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">ili</span>,
         <span class="summary-sig-arg">source_wn_version</span>,
         <span class="summary-sig-arg">target_wn_version</span>,
@@ -311,7 +311,7 @@
       given a certain ili def, this method tries to map it to ilidef of 
       another wordnet version</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.ilidef_to_ilidef">source&nbsp;code</a></span>
+            <span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_ilidef_to_ilidef">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -383,7 +383,7 @@ ts | ilidefs
 from one wordnet version to the other [&quot;16&quot;,&quot;17&quot;,&quot;171&quot;,&quot;20&quot;,&quot;21&quot;,&quot;30&quot;]\
 .
 It makes use of the index.sense files from WordNet (http://wordnet.pri\
-nceton.edu/)
+nceton.edu/).
 ..."><code class="variable-quote">'</code><code class="variable-string">##WordNetMapper\n\nThis repo provides the possibilit</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
@@ -446,48 +446,48 @@ nceton.edu/)
   
   <p>method checks if the new_path_bin is different from currently in 
   memory. if so new_path_bin is load into memory, else nothing is done. If 
-  the combination of source and target wordnet is not available, 
-  BinException is raised.</p>
+  the combination of source and target wordnet is not available, IOError is
+  raised.</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
         <li><strong class="pname"><code>current_path_bin</code></strong> (str) - full path to bin that is currently in memory (with first usage 
           this variable will be an empty string</li>
         <li><strong class="pname"><code>new_path_bin</code></strong> (str) - full path to new path of the bin which might be loaded.</li>
-        <li><strong class="pname"><code>attribute</code></strong> (str) - map_offset_to_offset | map_offset_to_lexkey | 
-          map_lexkey_to_offset</li>
+        <li><strong class="pname"><code>attribute</code></strong> (str) - mapping_offset_to_offset | mapping_offset_to_lexkey | 
+          mapping_lexkey_to_offset</li>
     </ul></dd>
   </dl>
 </td></tr></table>
 </div>
-<a name="offset_to_lexkey"></a>
+<a name="map_offset_to_lexkey"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">offset_to_lexkey</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">map_offset_to_lexkey</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">offset</span>,
         <span class="sig-arg">lemma</span>,
         <span class="sig-arg">source_wn_version</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.offset_to_lexkey">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_offset_to_lexkey">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
   <p>method tries to return the lexkey of an offset. the following strategy
   is applied: (1) map offset to possible sensekeys (2) check for direct 
   lemma match in possible sensekeys (3) check if only one sensekey (4) pick
-  lexkey with lowest Levenshtein distance to lemma Exception Offset2Lexkey 
-  is raised if no lexkey is found.</p>
+  lexkey with lowest Levenshtein distance to lemma Exception ValueError is 
+  raised if no lexkey is found.</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>my_mapper = WordNetMapper()
-<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.offset_to_lexkey(<span class="py-string">&quot;05262185&quot;</span>,<span class="py-string">&quot;moustache&quot;</span>,<span class="py-string">&quot;30&quot;</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.map_offset_to_lexkey(<span class="py-string">&quot;05262185&quot;</span>,<span class="py-string">&quot;moustache&quot;</span>,<span class="py-string">&quot;30&quot;</span>)
 <span class="py-output">'moustache%1:08:00::'</span></pre>
 <pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.offset_to_lexkey(<span class="py-string">&quot;03413428&quot;</span>,<span class="py-string">&quot;gambling hell&quot;</span>,<span class="py-string">&quot;30&quot;</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.map_offset_to_lexkey(<span class="py-string">&quot;03413428&quot;</span>,<span class="py-string">&quot;gambling hell&quot;</span>,<span class="py-string">&quot;30&quot;</span>)
 <span class="py-output">'gambling_hell%1:06:00::'</span></pre>
   <dl class="fields">
     <dt>Parameters:</dt>
@@ -497,34 +497,34 @@ nceton.edu/)
         <li><strong class="pname"><code>source_wn_version</code></strong> (str) - source wn_version (for example '21')</li>
     </ul></dd>
     <dt>Returns: str</dt>
-        <dd>lexkey if found, else Exception Offset2Lexkey is raised.</dd>
+        <dd>lexkey if found, else Exception ValueError is raised.</dd>
   </dl>
 </td></tr></table>
 </div>
-<a name="offset_to_offset"></a>
+<a name="map_offset_to_offset"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">offset_to_offset</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">map_offset_to_offset</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">offset</span>,
         <span class="sig-arg">source_wn_version</span>,
         <span class="sig-arg">target_wn_version</span>,
         <span class="sig-arg">output_format</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">highest</code><code class="variable-quote">'</code></span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.offset_to_offset">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_offset_to_offset">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
   <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>my_parser = WordNetMapper()
-<span class="py-prompt">&gt;&gt;&gt; </span>my_parser.offset_to_offset(<span class="py-string">&quot;00020846&quot;</span>, <span class="py-string">&quot;21&quot;</span>, <span class="py-string">&quot;30&quot;</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>my_parser.map_offset_to_offset(<span class="py-string">&quot;00020846&quot;</span>, <span class="py-string">&quot;21&quot;</span>, <span class="py-string">&quot;30&quot;</span>)
 <span class="py-output">('00021939', 'n')</span></pre>
   <p>method tries to map offset to offset across versions of wordnet 
-  Offset2OffsetException is raised if no mapping available.</p>
+  ValueError is raised if no mapping available.</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
@@ -539,33 +539,32 @@ nceton.edu/)
         <dd>if param output_format == 'highest': str is returned of 
           (offset,pos) with highest confidence. if param output_format == 
           'all', a dict is returned mapping the (offset,pos) -&gt; 
-          confidence (float). Offset2OffsetException is raised if no 
-          mapping available.</dd>
+          confidence (float). ValueError is raised if no mapping available.</dd>
   </dl>
 </td></tr></table>
 </div>
-<a name="offset_to_ilidef"></a>
+<a name="map_offset_to_ilidef"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">offset_to_ilidef</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">map_offset_to_ilidef</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">offset</span>,
         <span class="sig-arg">source_wn_version</span>,
         <span class="sig-arg">target_wn_version</span>,
         <span class="sig-arg">output_format</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">highest</code><code class="variable-quote">'</code></span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.offset_to_ilidef">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_offset_to_ilidef">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
   <p>method tries to map offset to ildef across versions of wordnet</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>my_parser = WordNetMapper()
-<span class="py-prompt">&gt;&gt;&gt; </span>my_parser.offset_to_ilidef(<span class="py-string">&quot;00020846&quot;</span>, <span class="py-string">&quot;21&quot;</span>, <span class="py-string">&quot;30&quot;</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>my_parser.map_offset_to_ilidef(<span class="py-string">&quot;00020846&quot;</span>, <span class="py-string">&quot;21&quot;</span>, <span class="py-string">&quot;30&quot;</span>)
 <span class="py-output">'ili-30-00021939-n'</span></pre>
   <dl class="fields">
     <dt>Parameters:</dt>
@@ -584,28 +583,27 @@ nceton.edu/)
   </dl>
 </td></tr></table>
 </div>
-<a name="lexkey_to_lexkey"></a>
+<a name="map_lexkey_to_lexkey"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">lexkey_to_lexkey</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">map_lexkey_to_lexkey</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">lexkey</span>,
         <span class="sig-arg">source_wn_version</span>,
         <span class="sig-arg">target_wn_version</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.lexkey_to_lexkey">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_lexkey_to_lexkey">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>lexkey is mapped to lexkey. Exception Offset2Lexkey is raised if not 
-  found</p>
+  <p>lexkey is mapped to lexkey.</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>my_mapper = WordNetMapper()
-<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.lexkey_to_lexkey(<span class="py-string">'rock_hopper%1:05:00::'</span>,<span class="py-string">'21'</span>,<span class="py-string">'30'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.map_lexkey_to_lexkey(<span class="py-string">'rock_hopper%1:05:00::'</span>,<span class="py-string">'21'</span>,<span class="py-string">'30'</span>)
 <span class="py-output">'rock_hopper%1:05:00::'</span></pre>
   <dl class="fields">
     <dt>Parameters:</dt>
@@ -615,32 +613,31 @@ nceton.edu/)
         <li><strong class="pname"><code>target_wn_version</code></strong> (str) - source wn_version (for example '30')</li>
     </ul></dd>
     <dt>Returns: str</dt>
-        <dd>lexkey, Exception Offset2Lexkey is raised if not found</dd>
+        <dd>lexkey, Exception ValueError is raised if not found</dd>
   </dl>
 </td></tr></table>
 </div>
-<a name="lexkey_to_offset"></a>
+<a name="map_lexkey_to_offset"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">lexkey_to_offset</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">map_lexkey_to_offset</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">lexkey</span>,
         <span class="sig-arg">source_wn_version</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.lexkey_to_offset">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_lexkey_to_offset">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
   <p>method tries to return the offset of a lexkey from a particular 
-  wordnet version. Lexkey2OffsetException is raised if no mapping is 
-  found.</p>
+  wordnet version. ValueError is raised if no mapping is found.</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>my_mapper = WordNetMapper()
-<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.lexkey_to_offset(<span class="py-string">'rock_hopper%1:05:00::'</span>,<span class="py-string">'21'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.map_lexkey_to_offset(<span class="py-string">'rock_hopper%1:05:00::'</span>,<span class="py-string">'21'</span>)
 <span class="py-output">'02037384'</span></pre>
   <dl class="fields">
     <dt>Parameters:</dt>
@@ -649,32 +646,32 @@ nceton.edu/)
         <li><strong class="pname"><code>source_wn_version</code></strong> (str) - source wn_version (for example '21')</li>
     </ul></dd>
     <dt>Returns: str</dt>
-        <dd>offset of lexkey, Lexkey2OffsetException is raised if not found</dd>
+        <dd>offset of lexkey, ValueError is raised if not found</dd>
   </dl>
 </td></tr></table>
 </div>
-<a name="lexkey_to_ilidef"></a>
+<a name="map_lexkey_to_ilidef"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">lexkey_to_ilidef</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">map_lexkey_to_ilidef</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">lexkey</span>,
         <span class="sig-arg">source_wn_version</span>,
         <span class="sig-arg">target_wn_version</span>,
         <span class="sig-arg">output_format</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">highest</code><code class="variable-quote">'</code></span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.lexkey_to_ilidef">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_lexkey_to_ilidef">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
   <p>lexkey is mapped to ilidef</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>my_mapper = WordNetMapper()
-<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.lexkey_to_ilidef(<span class="py-string">'rock_hopper%1:05:00::'</span>,<span class="py-string">'20'</span>,<span class="py-string">'30'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.map_lexkey_to_ilidef(<span class="py-string">'rock_hopper%1:05:00::'</span>,<span class="py-string">'20'</span>,<span class="py-string">'30'</span>)
 <span class="py-output">'ili-30-02057330-n'</span></pre>
   <dl class="fields">
     <dt>Parameters:</dt>
@@ -693,27 +690,27 @@ nceton.edu/)
   </dl>
 </td></tr></table>
 </div>
-<a name="ilidef_to_lexkey"></a>
+<a name="map_ilidef_to_lexkey"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">ilidef_to_lexkey</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">map_ilidef_to_lexkey</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">ilidef</span>,
         <span class="sig-arg">lemma</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.ilidef_to_lexkey">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_ilidef_to_lexkey">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>method tries to map ilidef to lexkey. Exception Offset2Lexkey is 
-  raised if not found.</p>
+  <p>method tries to map ilidef to lexkey. Exception ValueError is raised 
+  if not found.</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>my_mapper = WordNetMapper()
-<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.ilidef_to_lexkey(<span class="py-string">'ili-30-02069355-a'</span>,<span class="py-string">'other'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.map_ilidef_to_lexkey(<span class="py-string">'ili-30-02069355-a'</span>,<span class="py-string">'other'</span>)
 <span class="py-output">'other%3:00:00::'</span></pre>
   <dl class="fields">
     <dt>Parameters:</dt>
@@ -722,34 +719,32 @@ nceton.edu/)
         <li><strong class="pname"><code>lemma</code></strong> (str) - a lemma, for example 'other'</li>
     </ul></dd>
     <dt>Returns: str</dt>
-        <dd>lexkey of combination of ilidef and lemma. Exception 
-          Offset2Lexkey</dd>
+        <dd>lexkey of combination of ilidef and lemma.</dd>
   </dl>
 </td></tr></table>
 </div>
-<a name="ilidef_to_offset"></a>
+<a name="map_ilidef_to_offset"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">ilidef_to_offset</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">map_ilidef_to_offset</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">ili</span>,
         <span class="sig-arg">target_wn_version</span>,
         <span class="sig-arg">output_format</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">highest</code><code class="variable-quote">'</code></span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.ilidef_to_offset">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_ilidef_to_offset">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
   <p>given a certain ili definition (for example ili-30-02069355-a) the 
-  ilidef is mapped to an offset between wordnet versions. IliException is 
-  raised if the input format of the ili is not correct</p>
+  ilidef is mapped to an offset between wordnet versions.</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>my_mapper = WordNetMapper()
-<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.ilidef_to_offset(<span class="py-string">'ili-30-02069355-a'</span>,<span class="py-string">'20'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.map_ilidef_to_offset(<span class="py-string">'ili-30-02069355-a'</span>,<span class="py-string">'20'</span>)
 <span class="py-output">('01999889', 'a')</span></pre>
   <dl class="fields">
     <dt>Parameters:</dt>
@@ -768,21 +763,21 @@ nceton.edu/)
   </dl>
 </td></tr></table>
 </div>
-<a name="ilidef_to_ilidef"></a>
+<a name="map_ilidef_to_ilidef"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">ilidef_to_ilidef</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">map_ilidef_to_ilidef</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">ili</span>,
         <span class="sig-arg">source_wn_version</span>,
         <span class="sig-arg">target_wn_version</span>,
         <span class="sig-arg">output_format</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">highest</code><code class="variable-quote">'</code></span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.ilidef_to_ilidef">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="WordNetMapper.wordnet_mapper-pysrc.html#WordNetMapper.map_ilidef_to_ilidef">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
@@ -790,7 +785,7 @@ nceton.edu/)
   another wordnet version</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>my_mapper = WordNetMapper()
-<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.ilidef_to_ilidef(<span class="py-string">'ili-30-02069355-a'</span>,<span class="py-string">'30'</span>,<span class="py-string">'16'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>my_mapper.map_ilidef_to_ilidef(<span class="py-string">'ili-30-02069355-a'</span>,<span class="py-string">'30'</span>,<span class="py-string">'16'</span>)
 <span class="py-output">'ili-16-01991315-a'</span></pre>
   <dl class="fields">
     <dt>Parameters:</dt>
@@ -910,7 +905,7 @@ nceton.edu/)
 <code class="variable-string">from one wordnet version to the other [&quot;16&quot;,&quot;17&quot;,&quot;171&quot;,&quot;20&quot;,&quot;21&quot;,&quot;30&quot;]</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 <code class="variable-string">.</code>
 <code class="variable-string">It makes use of the index.sense files from WordNet (http://wordnet.pri</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-<code class="variable-string">nceton.edu/)</code>
+<code class="variable-string">nceton.edu/).</code>
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -944,7 +939,7 @@ nceton.edu/)
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Jun 15 14:21:48 2015
+    Generated by Epydoc 3.0.1 on Tue Jun 30 12:03:28 2015
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
