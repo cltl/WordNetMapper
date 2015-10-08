@@ -1,6 +1,7 @@
 #import built-in
 import os 
 import subprocess
+import gzip 
 
 #import pickle (use cPickle for python2)
 import sys
@@ -29,26 +30,21 @@ class WordNetMapper():
     def __init__(self):
         
         self.current_path_bin      = ""
-        self.cur_lexkey_to_offset  = ""
         self.mapping_offset_to_offset   = {}
-        self.cur_offset_to_offset  = ""
         self.mapping_offset_to_lexkey   = {}
-        self.cur_offset_to_lexkey  = ""
         self.mapping_lexkey_to_offset   = {}
+        self.in_memory = {'mapping_offset_to_offset' : '',
+                          'mapping_offset_to_lexkey' : '',
+                          'mapping_lexkey_to_offset' : ''}
         
     def load_bin_if_needed(self,
-                           current_path_bin,
                            new_path_bin,
                            attribute):
         '''
         method checks if the new_path_bin is different from currently in memory.
-        if so new_path_bin is load into memory, else nothing is done.
+        if so new_path_bin is loaded into memory, else nothing is done.
         If the combination of source and target wordnet is not available, 
         IOError is raised.
-        
-        @type  current_path_bin: str
-        @param current_path_bin: full path to bin that is currently in memory
-        (with first usage this variable will be an empty string
         
         @type  new_path_bin: str
         @param new_path_bin: full path to new path of the bin which might be
@@ -57,19 +53,14 @@ class WordNetMapper():
         @type  attribute: str
         @param attribute: mapping_offset_to_offset | mapping_offset_to_lexkey | mapping_lexkey_to_offset
         ''' 
-        if new_path_bin != self.current_path_bin:
+        if new_path_bin != self.in_memory[attribute]:
             
-            if os.path.exists(new_path_bin) == False:
-                subprocess.check_output("gunzip %s.gz" % new_path_bin,shell=True)
-            if self.current_path_bin:
-                subprocess.check_output("gzip %s" % self.current_path_bin,shell=True)
-                
             try:
-                mapping = pickle.load(open(new_path_bin,"rb"))
+                mapping = pickle.load( gzip.open(new_path_bin+'.gz',"rb") )
             except IOError:
                 raise IOError('''there is no dict available for the combination of the given source and target versions''')
             
-            self.current_path_bin = new_path_bin
+            self.in_memory[attribute] = new_path_bin
             setattr(self, attribute, mapping)  
 
     def map_offset_to_lexkey(self, offset, 
@@ -107,8 +98,7 @@ class WordNetMapper():
         #load_bin_if_needed
         path_bin = os.path.join(paths['dir_offset2lexkey_bins'],
                                 source_wn_version)
-        self.load_bin_if_needed(self.cur_offset_to_lexkey, 
-                                path_bin, 
+        self.load_bin_if_needed(path_bin, 
                                 'mapping_offset_to_lexkey')
         
         #map offset to possible lexkeys
@@ -176,8 +166,7 @@ class WordNetMapper():
         path_bin = os.path.join(paths['dir_offset2offset_bins'],
                                 "%s_%s" % (source_wn_version,
                                            target_wn_version))
-        self.load_bin_if_needed(self.cur_offset_to_offset,
-                                path_bin,
+        self.load_bin_if_needed(path_bin,
                                 'mapping_offset_to_offset')
         
         #map offset to offset
@@ -281,7 +270,7 @@ class WordNetMapper():
         target_offset,pos = self.map_offset_to_offset(source_offset, 
                                                       source_wn_version, 
                                                       target_wn_version)
-         
+        
         #map offset to lexkey
         target_lexkey = self.map_offset_to_lexkey(target_offset, 
                                                   lemma, 
@@ -311,8 +300,7 @@ class WordNetMapper():
         #load_bin_if_needed
         path_bin = os.path.join(paths['dir_lexkey2offset_bins'],
                                 source_wn_version)
-        self.load_bin_if_needed(self.cur_lexkey_to_offset, 
-                                path_bin, 
+        self.load_bin_if_needed(path_bin, 
                                 "mapping_lexkey_to_offset")
         
         #map lexkey to offset
@@ -518,7 +506,7 @@ class WordNetMapper():
         
         bin_path = os.path.join(paths['dir_offset2lexkey_bins'],
                                 source_wn_version)
-        bin      = pickle.load(open(bin_path,"rb"))
+        bin      = pickle.load( gzip.open(bin_path+'.gz',"rb") )
         
         for counter,(offset,version) in enumerate(bin):
     

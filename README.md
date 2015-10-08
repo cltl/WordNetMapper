@@ -1,5 +1,7 @@
 ##WordNetMapper
 
+TIP: please clone this repo with: git clone --depth=1 https://github.com/MartenPostma/WordNetMapper.
+
 This repo provides the possibility to map between lexical keys | offsets | ilidefs
 from one wordnet version to the other ["16","17","171","20","21","30"].
 It makes use of the index.sense files from WordNet (http://wordnet.princeton.edu/).
@@ -16,9 +18,9 @@ Here are some examples on how to use it (all methods return ValueError if no map
 
 ```shell
 python
->>> from WordNetMapper import WordNetMapper #the first time this command is executed, the resources folder will be untarred.
+>>> from WordNetMapper import WordNetMapper
 >>> my_mapper = WordNetMapper()
->>> my_mapper.offset_to_offset("00020846", "21", "30")
+>>> my_mapper.map_offset_to_offset("00020846", "21", "30")
 ('00021939', 'n')
 >>>
 >>> succes_rate,missed_mappings = my_mapper.overlap("30","171")

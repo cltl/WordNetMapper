@@ -1,8 +1,6 @@
 WordNetMapper	WordNetMapper-module.html
 WordNetMapper.__package__	WordNetMapper-module.html#__package__
-WordNetMapper.command	WordNetMapper-module.html#command
 WordNetMapper.cwd	WordNetMapper-module.html#cwd
-WordNetMapper.path_tar	WordNetMapper-module.html#path_tar
 WordNetMapper.bins_utils	WordNetMapper.bins_utils-module.html
 WordNetMapper.bins_utils.mapping_offset2lexkey	WordNetMapper.bins_utils-module.html#mapping_offset2lexkey
 WordNetMapper.bins_utils.get_pos	WordNetMapper.bins_utils-module.html#get_pos
@@ -26,18 +24,12 @@ WordNetMapper.create_bins.wn_versions	WordNetMapper.create_bins-module.html#wn_v
 WordNetMapper.create_bins.index_senses_dir	WordNetMapper.create_bins-module.html#index_senses_dir
 WordNetMapper.create_bins.save_pickle	WordNetMapper.create_bins-module.html#save_pickle
 WordNetMapper.create_bins.cwd	WordNetMapper.create_bins-module.html#cwd
-WordNetMapper.unit_test_it	WordNetMapper.unit_test_it-module.html
-WordNetMapper.unit_test_it.__package__	WordNetMapper.unit_test_it-module.html#__package__
 WordNetMapper.wn_mapper_utils	WordNetMapper.wn_mapper_utils-module.html
 WordNetMapper.wn_mapper_utils.levenshtein	WordNetMapper.wn_mapper_utils-module.html#levenshtein
 WordNetMapper.wn_mapper_utils.format_output	WordNetMapper.wn_mapper_utils-module.html#format_output
 WordNetMapper.wn_mapper_utils.__package__	WordNetMapper.wn_mapper_utils-module.html#__package__
 WordNetMapper.wordnet_mapper	WordNetMapper.wordnet_mapper-module.html
 WordNetMapper.wordnet_mapper.__package__	WordNetMapper.wordnet_mapper-module.html#__package__
-WordNetMapper.unit_test_it.WordNetMapping	WordNetMapper.unit_test_it.WordNetMapping-class.html
-WordNetMapper.unit_test_it.WordNetMapping.test_BinException	WordNetMapper.unit_test_it.WordNetMapping-class.html#test_BinException
-unittest.case.TestCase.failureException	exceptions.AssertionError-class.html
-WordNetMapper.unit_test_it.WordNetMapping.test_Offset2Lexkey	WordNetMapper.unit_test_it.WordNetMapping-class.html#test_Offset2Lexkey
 WordNetMapper.wordnet_mapper.WordNetMapper	WordNetMapper.wordnet_mapper.WordNetMapper-class.html
 WordNetMapper.wordnet_mapper.WordNetMapper.map_offset_to_ilidef	WordNetMapper.wordnet_mapper.WordNetMapper-class.html#map_offset_to_ilidef
 WordNetMapper.wordnet_mapper.WordNetMapper.__status__	WordNetMapper.wordnet_mapper.WordNetMapper-class.html#__status__
@@ -56,6 +48,3 @@ WordNetMapper.wordnet_mapper.WordNetMapper.map_lexkey_to_offset	WordNetMapper.wo
 WordNetMapper.wordnet_mapper.WordNetMapper.map_lexkey_to_lexkey	WordNetMapper.wordnet_mapper.WordNetMapper-class.html#map_lexkey_to_lexkey
 WordNetMapper.wordnet_mapper.WordNetMapper.__init__	WordNetMapper.wordnet_mapper.WordNetMapper-class.html#__init__
 WordNetMapper.wordnet_mapper.WordNetMapper.map_offset_to_lexkey	WordNetMapper.wordnet_mapper.WordNetMapper-class.html#map_offset_to_lexkey
-exceptions.AssertionError	exceptions.AssertionError-class.html
-exceptions.AssertionError.__init__	exceptions.AssertionError-class.html#__init__
-exceptions.AssertionError.__new__	exceptions.AssertionError-class.html#__new__
