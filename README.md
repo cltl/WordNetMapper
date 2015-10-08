@@ -1,6 +1,8 @@
 ##WordNetMapper
 
-TIP: please clone this repo with: git clone --depth=1 https://github.com/MartenPostma/WordNetMapper.
+TIP: please clone this repo with: 
+
+git clone --depth=1 https://github.com/MartenPostma/WordNetMapper.
 
 This repo provides the possibility to map between lexical keys | offsets | ilidefs
 from one wordnet version to the other ["16","17","171","20","21","30"].
