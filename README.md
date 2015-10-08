@@ -7,8 +7,8 @@ git clone --depth=1 https://github.com/MartenPostma/WordNetMapper.
 This repo provides the possibility to map between lexical keys | offsets | ilidefs
 from one wordnet version to the other ["16","17","171","20","21","30"].
 It makes use of the index.sense files from WordNet (http://wordnet.princeton.edu/).
-WordNet is redistributed in this repo (see WORDNET_LICENSE.md) for the license agreement.
-and the automatically generated mappings between WordNet offsets (http://nlp.lsi.upc.edu/tools/download-map.php)
+WordNet is redistributed in this repo (see WORDNET_LICENSE.md for the license agreement).
+The automatically generated mappings between WordNet offsets can be found at http://nlp.lsi.upc.edu/tools/download-map.php.
 
 ##USAGE
 This library is a python module (should work with both version 2.7 and 3+). 
