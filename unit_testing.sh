@@ -3,4 +3,4 @@ echo "if you only see this message, the unit test was succesful"
 python2.7 -m doctest wordnet_mapper.py
 
 #unit test 3.4
-python3.4 -m doctest wordnet_mapper.py
+python3.4 -m doctest wordnet_mapper.py -v

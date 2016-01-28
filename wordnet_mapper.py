@@ -183,7 +183,7 @@ class WordNetMapper():
         
         elif output_format == "all":
             return target_offsets
-        else:
+        else:   
             offset_with_highest_confidence,pos = utils.format_output(target_offsets)
             return (offset_with_highest_confidence,pos)
     
@@ -344,14 +344,21 @@ class WordNetMapper():
         with highest confidence. if param output_format == 'all', a dict is returned mapping the 
         (ildef,pos) -> confidence (float)
         '''
+        #get pos
+        pos = utils.pos_lexkey(lexkey)
+        
         #map lexkey to offset
         source_offset = self.map_lexkey_to_offset(lexkey, source_wn_version)
         
-        #map offset to ilidef
-        ilidef = self.map_offset_to_ilidef(source_offset, 
-                                           source_wn_version, 
-                                           target_wn_version,
-                                           output_format=output_format)
+        #check for same version source and target
+        if source_wn_version == target_wn_version:
+            ilidef = 'ili-{source_wn_version}-{source_offset}-{pos}'.format(**locals())
+        else:
+            #map offset to ilidef
+            ilidef = self.map_offset_to_ilidef(source_offset, 
+                                               source_wn_version, 
+                                               target_wn_version,
+                                               output_format=output_format)
         
         return ilidef 
     

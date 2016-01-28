@@ -46,6 +46,7 @@ def mapping_offset2offset(map_file,
                 index_target_offset_conf = index_target_offset+1
                 
                 if source_wn_version == target_wn_version:
+                    #TODO: this has to change to index.sense file
                     target_offset      = source_offset
                     target_offset_conf = 1.0
                 else:

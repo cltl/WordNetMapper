@@ -1,6 +1,6 @@
 ##WordNetMapper
 
-TIP: please clone this repo with: 
+TIP: please clone this repo with:
 
 git clone --depth=1 https://github.com/MartenPostma/WordNetMapper.
 
@@ -11,7 +11,7 @@ WordNet is redistributed in this repo (see WORDNET_LICENSE.md for the license ag
 The automatically generated mappings between WordNet offsets can be found at http://nlp.lsi.upc.edu/tools/download-map.php.
 
 ##USAGE
-This library is a python module (should work with both version 2.7 and 3+). 
+This library is a python module (should work with both version 2.7 and 3+).
 For python 2.7, the cPickle module has to be installed.
 Epydoc was used to document the code (http://epydoc.sourceforge.net/).
 The documentation can be found [here](http://htmlpreview.github.io/?https://github.com/MartenPostma/WordNetMapper/blob/master/html/WordNetMapper.wordnet_mapper.WordNetMapper-class.html).
@@ -64,4 +64,5 @@ For bugs and other things related to this repo, please contact:
 * Free University of Amsterdam
 
 ##TODO:
+* offset to offset must be pos specific
 * extend unit testing with output_format == "all" examples + catching errors

@@ -1,6 +1,25 @@
 import operator
 
-
+def pos_lexkey(lexkey):
+    '''
+    get pos (n,v,r,a) of wordnet lexkey
+    
+    :param str lexkey: wordnet lexical key
+    
+    :rtype: str
+    :return: n,v,r,a
+    '''
+    pos_mapping = {'1': 'n',
+               '2': 'v',
+               '3': 'a',
+               '4': 'r',
+               '5': 'a' }
+    lemma,reste = key.split('%')
+    pos_number =  reste[0]
+    pos = pos_mapping[pos_number]
+    
+    return pos
+    
 def format_output(d):
     '''
     offset with highest confidence is returned. 
