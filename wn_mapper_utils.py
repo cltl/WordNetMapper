@@ -14,7 +14,7 @@ def pos_lexkey(lexkey):
                '3': 'a',
                '4': 'r',
                '5': 'a' }
-    lemma,reste = key.split('%')
+    lemma,reste = lexkey.split('%')
     pos_number =  reste[0]
     pos = pos_mapping[pos_number]
     
