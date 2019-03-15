@@ -7,19 +7,18 @@ function obtain_index_sense () {
 echo
 echo "extracting index.sense for wordnet version $2"
 wget $1
-rm -rf tmp && mkdir tmp
+sudo rm -rf tmp && mkdir tmp
 tar -xf $(basename $1) -C $cwd/tmp
 mv -f $(find tmp/ -name "index.sense") $cwd/resources/wn_index_senses/$2  
-rm $(basename $1)
-echo "sorry, but I need sudo right to delete some downloaded wordnet files"
-rm -rf tmp
+sudo rm $(basename $1)
+sudo rm -rf tmp
 }
 
 function mappings () {
 
 echo
 echo "downloading wordnet mappings"
-wget http://nlp.lsi.upc.edu/tools/download-map.php
+wget https://web.archive.org/web/20130713151834/http://nlp.lsi.upc.edu/tools/download-map.php
 mv download-map.php $cwd/resources/mappings.tar.gz
 cd $cwd/resources
 tar -zxvf mappings.tar.gz
@@ -59,7 +58,7 @@ obtain_index_sense "http://wordnetcode.princeton.edu/2.1/WordNet-2.1.tar.gz" 21
 obtain_index_sense "http://wordnetcode.princeton.edu/3.0/WordNet-3.0.tar.gz" 30
 
 #create bins
-python2 create_bins.py run
+python create_bins.py run
 
 #rm mappings and index file
 rm -rf resources/wn_index_senses
